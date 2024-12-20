@@ -42,7 +42,7 @@ const edittask = (task, id) => {
 
   return (
     <div className="TodoWrapper">
-        <h1>Todo List</h1>
+        <h1>Todo Lists</h1>
       <TodoForm addtodo={addtodo} /> 
       {todos.map((todo, index) => (
         todo.isEditing ? (
