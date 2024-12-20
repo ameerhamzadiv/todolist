@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        // Build Stage Start
         stage('Build') {
             agent {
                 docker {
@@ -19,6 +20,12 @@ pipeline {
                    ls -la
                 '''
             }
-        }
+        } // Build Stage End
+        // Test Stage Start
+        stage('Test') {
+            steps {
+                echo 'Test Stage'
+            }
+        } // Test Stage End
     }
 }
