@@ -26,7 +26,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
-                    ruseNode: true
+                    ruseNode true
                 }
             }
             steps {
