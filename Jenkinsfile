@@ -23,8 +23,17 @@ pipeline {
         } // Build Stage End
         // Test Stage Start
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    ruseNode: true
+                }
+            }
             steps {
-                sh 'test -f build/index.html'
+                sh '''
+                test -f build/index.html
+                npm test
+                '''
             }
         } // Test Stage End
     }
